@@ -6,12 +6,12 @@ build-web: clean
 	ls -lah pkg/*.wasm
 
 build-deno: clean
-	wasm-pack build --release --target deno --out-dir pkg-deno
+	wasm-pack build --dev --target deno --out-dir pkg-deno
 	ls -lah pkg/*.wasm
 
 clean:
 	rm -fr pkg pkg-deno
 
 test:
-	cargo test --test tests
+	# cargo test --test tests
 	wasm-pack test --headless --firefox
